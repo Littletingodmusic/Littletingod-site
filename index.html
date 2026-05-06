@@ -1,213 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Little Tin God</title>
+  <meta charset="UTF-8">
+  <title>Little Tin God</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: black;
-    color: white;
-    overflow-x: hidden;
-}
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
 
-/* HERO */
-.hero {
-    height: 100vh;
-    background: url('tin-god.jpg') center/cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    animation: zoomHero 20s infinite alternate ease-in-out;
-}
+    section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      transition: all 1s ease;
+    }
 
-/* DARK OVERLAY */
-.overlay {
-    background: rgba(0,0,0,0.7);
-    padding: 40px;
-    text-align: center;
-    animation: fadeIn 2s ease;
-}
+    h1 {
+      font-size: 42px;
+      letter-spacing: 6px;
+      margin-bottom: 10px;
+    }
 
-/* TITLE */
-h1 {
-    font-size: 3em;
-    letter-spacing: 3px;
-}
+    p {
+      opacity: 0.7;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
 
-/* TEXT */
-p {
-    opacity: 0.85;
-}
+    .btn {
+      margin-top: 20px;
+      padding: 12px 24px;
+      text-decoration: none;
+      border: 1px solid white;
+      color: white;
+      font-size: 12px;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
 
-/* BUTTON */
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
-    border: 2px solid #ff6600;
-    color: #ff6600;
-    text-decoration: none;
-    animation: pulseGlow 2.5s infinite;
-    transition: 0.3s;
-}
+    .btn:hover {
+      background: white;
+      color: black;
+    }
 
-.btn:hover {
-    background: #ff6600;
-    color: black;
-}
+    .kdyw {
+      background: radial-gradient(circle at center, #ff6a00 0%, black 70%);
+    }
 
-/* EMBERS */
-.embers {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
+    .kdyw p {
+      color: #ffb38a;
+    }
 
-.ember {
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    background: #ff6600;
-    border-radius: 50%;
-    opacity: 0.7;
-    animation: floatUp linear infinite;
-}
+    .kdyw .btn {
+      border-color: #ff6a00;
+      color: #ff6a00;
+    }
 
-/* SECTIONS */
-.section {
-    padding: 60px 20px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: 1s;
-}
+    .kdyw .btn:hover {
+      background: #ff6a00;
+      color: black;
+    }
 
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+    .jericho {
+      background: radial-gradient(circle at center, #0a3cff 0%, black 70%);
+    }
 
-/* VIDEO */
-iframe {
-    width: 90%;
-    max-width: 600px;
-    height: 315px;
-}
+    .jericho p {
+      color: #9bbcff;
+    }
 
-/* SOCIAL */
-.socials a {
-    margin: 10px;
-    color: #ff6600;
-    text-decoration: none;
-}
+    .jericho .btn {
+      border-color: #0a3cff;
+      color: #0a3cff;
+    }
 
-/* CURSOR GLOW */
-.cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    pointer-events: none;
-    background: rgba(255,100,0,0.4);
-    mix-blend-mode: screen;
-    z-index: 999;
-}
+    .jericho .btn:hover {
+      background: #0a3cff;
+      color: black;
+    }
 
-/* ANIMATIONS */
-@keyframes floatUp {
-    from { transform: translateY(100vh); }
-    to { transform: translateY(-10vh); }
-}
+    .transition {
+      background: linear-gradient(black, #111);
+    }
 
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 5px #ff6600; }
-    50% { box-shadow: 0 0 25px #ff6600; }
-    100% { box-shadow: 0 0 5px #ff6600; }
-}
+    .fade {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1.5s forwards;
+    }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes zoomHero {
-    from { background-size: 100%; }
-    to { background-size: 110%; }
-}
-</style>
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="cursor" id="cursor"></div>
+  <section>
+    <h1 class="fade">LITTLE TIN GOD</h1>
+    <p class="fade">a piece of me in every sound</p>
+  </section>
 
-<div class="hero">
+  <section class="kdyw">
+    <h1 class="fade">KDYW</h1>
+    <p class="fade">something in me broke</p>
+    <a class="btn fade" href="https://distrokid.com/hyperfollow/littletingod/knocking-down-your-walls" target="_blank">
+      LISTEN
+    </a>
+  </section>
 
-    <div class="embers" id="embers"></div>
+  <section class="jericho">
+    <h1 class="fade">JERICHO</h1>
+    <p class="fade">you can hear it now</p>
+    <a class="btn fade" href="https://distrokid.com/hyperfollow/littletingod/jericho" target="_blank">
+      ENTER
+    </a>
+  </section>
 
-    <div class="overlay">
-        <h1>LITTLE TIN GOD</h1>
-        <p>A piece of me in every sound.<br>
-        Different versions exist in different songs.</p>
-
-        <a class="btn" href="https://distrokid.com/hyperfollow/littletingod/knocking-down-your-walls" target="_blank">
-            STREAM NOW
-        </a>
-    </div>
-</div>
-
-<div class="section">
-    <h2>WATCH</h2>
-    <iframe src="https://www.youtube.com/embed/8m_jxnFYrIM"></iframe>
-</div>
-
-<div class="section">
-    <h2>FOLLOW</h2>
-    <div class="socials">
-        <a href="https://www.tiktok.com/@little_tin_god">TikTok</a>
-        <a href="https://youtube.com/@little_tin_god">YouTube</a>
-        <a href="https://open.spotify.com/album/3m8wxGCpOksIZaEsLJAgJB">Spotify</a>
-    </div>
-</div>
-
-<script>
-/* EMBERS */
-const container = document.getElementById("embers");
-
-for (let i = 0; i < 50; i++) {
-    let e = document.createElement("div");
-    e.classList.add("ember");
-    e.style.left = Math.random() * 100 + "vw";
-    e.style.animationDuration = (3 + Math.random()*5) + "s";
-    container.appendChild(e);
-}
-
-/* SCROLL ANIMATION */
-const sections = document.querySelectorAll('.section');
-
-window.addEventListener('scroll', () => {
-    sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) {
-            sec.classList.add('visible');
-        }
-    });
-});
-
-/* CURSOR GLOW */
-const cursor = document.getElementById('cursor');
-
-document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
-</script>
+  <section class="transition">
+    <p class="fade">not everyone hears it</p>
+    <p class="fade">but some do</p>
+  </section>
 
 </body>
 </html>
